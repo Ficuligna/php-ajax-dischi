@@ -9,7 +9,8 @@ function getFilteredData(){
     var autore = $("select").val();
     var query = "artist=" + autore;
     $.ajax({
-      url: "prova.php/?" + query,
+      url: "prova.php/",
+      data: ['artist': autore],
       success: function(data){
         $(".post").remove();
         for (var variable in data) {
